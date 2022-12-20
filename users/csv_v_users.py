@@ -25,7 +25,7 @@ def load_data_users():
     with open(f'datasets/user.csv', encoding="utf-8") as csvfile:
         rows_data = list(csv.DictReader(csvfile))
     for row_data in rows_data:
-        location = Location.objects.filter(id=int(row_data["id"]))
+        location = Location.objects.filter(id=int(row_data["location_id"]))
         user = User(
             first_name=row_data["first_name"],
             last_name=row_data["last_name"],
